@@ -32,7 +32,7 @@ class SortController {
       const data = await getObjectList()
       if (condition) {
         data.map((object) => {
-          if (!object[condition]) {
+          if (object[condition] === undefined) {
             getSortDuration(object.id, object.objectData, 'bubbleSort')
           }
         })
